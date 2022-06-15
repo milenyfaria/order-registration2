@@ -1,45 +1,46 @@
 import { Request, Response } from 'express'
-import { connection } from '../data/connection'
+import { readStockRepository } from '../repository/stock-repository'
 
 export const readStockController = async (req: Request, res: Response) => {
     let errorCode = 500
 
     try {
 
-        const resposta =  await connection('stock').select()
-        res.send(resposta)
+        const stock =  await readStockRepository()
+        
+        res.send(stock)
         
     } catch (error: any) {
         res.status(errorCode).send(error.message)
     }
 }
 
-export const createShoppingList = async (req: Request, res: Response) => {
-    let errorCode = 500
+// export const createShoppingList = async (req: Request, res: Response) => {
+//     let errorCode = 500
 
-    try {
+//     try {
         
-    } catch (error: any) {
-        res.status(errorCode).send(error.message)
-    }
-}
+//     } catch (error: any) {
+//         res.status(errorCode).send(error.message)
+//     }
+// }
 
-export const updateShoppingList = async (req: Request, res: Response) => {
-    let errorCode = 500
+// export const updateShoppingList = async (req: Request, res: Response) => {
+//     let errorCode = 500
 
-    try {
+//     try {
         
-    } catch (error: any) {
-        res.status(errorCode).send(error.message)
-    }
-}
+//     } catch (error: any) {
+//         res.status(errorCode).send(error.message)
+//     }
+// }
 
-export const deleteShoppingList = async (req: Request, res: Response) => {
-    let errorCode = 500
+// export const deleteShoppingList = async (req: Request, res: Response) => {
+//     let errorCode = 500
 
-    try {
+//     try {
         
-    } catch (error: any) {
-        res.status(errorCode).send(error.message)
-    }
-}
+//     } catch (error: any) {
+//         res.status(errorCode).send(error.message)
+//     }
+// }
