@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
 import { CardItem } from '../../components/cardItem/CardItem'
 import { ContainerStock } from './style'
 import { GlobalStateContext } from '../../global/GlobalStateContext'
+import { Header } from '../../components/header/Header'
 
 export const Stock = () => {
     const [ stock, setStock ] = useState([])
@@ -83,6 +83,7 @@ export const Stock = () => {
        
         return(
             <div>
+                <Header />
                 <ContainerStock>
                 {isLoading ? <p>Carregando...</p> : productsByType}
                 </ContainerStock>
