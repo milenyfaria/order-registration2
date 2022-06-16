@@ -1,14 +1,57 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom"
-import { goToStock } from "../../routes/coordinator";
+import { goToStock } from '../../routes/coordinator'
+import { useNavigate } from 'react-router-dom'
+import { useForms } from '../../hooks/useForms'
+import {
+  ContainerLoginPage,
+  ContainerBoxLogin,
+  Image,
+  Title,
+  ContainerInput,
+  Input,
+  ButtonLogIn
+} from './style'
+import foto from '../../assets/og-logo.png'
 
 export const Login = () => {
-    const navigate = useNavigate()
-    
-    return (
-        <div>
-            Login
-            <button onClick={() => goToStock(navigate)}>Entrar</button>
-        </div>
-    )
+  const navigate = useNavigate()
+  const { form, onChange, cleanFields } = useForms({ email: "", password: "" })
+
+  const onSubmitLogin = (event) => {
+    event.preventDefault()
+    goToStock(navigate)
+    cleanFields()
+  }
+
+  return (
+    <ContainerLoginPage>
+      <Image src={foto} />
+      <ContainerBoxLogin>
+        <Title>Login</Title>
+        <form onSubmit={onSubmitLogin}>
+          <ContainerInput>
+            <Input
+              placeholder="Digite seu email"
+              name={"email"}
+              type={"email"}
+              value={form.email}
+              onChange={onChange}
+              required
+            />
+          </ContainerInput>
+          <ContainerInput>
+            <Input
+              placeholder="Digite sua senha"
+              name={"password"}
+              type={"password"}
+              value={form.password}
+              onChange={onChange}
+              required
+            />
+          </ContainerInput>
+          <ButtonLogIn>Entrar</ButtonLogIn>
+        </form>
+      </ContainerBoxLogin>
+    </ContainerLoginPage>
+  )
 }
