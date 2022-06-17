@@ -1,38 +1,24 @@
-import React, { useState, useEffect, useContext } from 'react'
-import axios from 'axios'
+import React, { Fragment, useContext } from 'react'
 import { CardItem } from '../../components/cardItem/CardItem'
 import { ContainerStock } from './style'
 import { GlobalStateContext } from '../../global/GlobalStateContext'
 import { Header } from '../../components/header/Header'
+import { useRequestData } from '../../hooks/useRequestData'
 
 export const Stock = () => {
-    const [ stock, setStock ] = useState([])
-    const [ isLoading, setIsLoading ] = useState(false)
+    const [ stock, setStock, isLoading ] = useRequestData('/estoque', [])
     const { states, setters } = useContext(GlobalStateContext)
     const { list } = states
     const { setList } = setters
 
-    useEffect(() => {
-        getStock()
-    }, [])
-
-    const getStock = () => {
-        setIsLoading(true)
-
-        axios
-        .get('http://localhost:3003/estoque')
-        .then((res) => {
-            setStock(res.data)
-            setIsLoading(false)
-        })
-        .catch((err) => {
-            alert('Não conseguimos renderizar o estoque')
-        })
-    }
-
+    
     const addItemToList = (newItem) => {
         const newList = [...list]
         const index = newList.findIndex((i) => i.id === newItem.id)
+        if (!newItem.qty_stock || (index !== -1 && newItem.qty_stock <= newList[index].qty)) {
+            alert('Vá a mierda')
+            return
+        }
     
         if (index === -1) {
           const listItem = { ...newItem, qty: 1 }
@@ -61,22 +47,21 @@ export const Stock = () => {
     
       const productsByType = newTypeArray.map((type) => {
         return(
-          <div key={type}>
-            <div>{type}</div>
-    
+          <Fragment key={type}>
             {stock.filter((item) => {
               return item.type === type
             })
-            .map((item) => {
+            .map((item, index) => {
               return(
                 <CardItem
                   key={item.id}
+                  type={!index && type}
                   item={item}
                   addItemToList={addItemToList} 
                 />
               )
             })}
-          </div>
+          </Fragment>
         )
       })
     

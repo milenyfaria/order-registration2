@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { readStockRepository } from '../repository/stock-repository'
+import { readStockRepository, updateStockRepository } from '../repository/stock-repository'
 
 export const readStockController = async (req: Request, res: Response) => {
     let errorCode = 500
@@ -15,32 +15,15 @@ export const readStockController = async (req: Request, res: Response) => {
     }
 }
 
-// export const createShoppingList = async (req: Request, res: Response) => {
-//     let errorCode = 500
+export const updateStockController = async (req: Request, res: Response) => {
+    let errorCode = 500
 
-//     try {
-        
-//     } catch (error: any) {
-//         res.status(errorCode).send(error.message)
-//     }
-// }
+    try {
+        const stock = await updateStockRepository(req.body)
+        res.send(stock)
 
-// export const updateShoppingList = async (req: Request, res: Response) => {
-//     let errorCode = 500
+    } catch (error: any) {
+        res.status(errorCode).send(error.message)
+    }
+}
 
-//     try {
-        
-//     } catch (error: any) {
-//         res.status(errorCode).send(error.message)
-//     }
-// }
-
-// export const deleteShoppingList = async (req: Request, res: Response) => {
-//     let errorCode = 500
-
-//     try {
-        
-//     } catch (error: any) {
-//         res.status(errorCode).send(error.message)
-//     }
-// }

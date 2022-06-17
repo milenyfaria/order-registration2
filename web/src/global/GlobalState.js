@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { GlobalStateContext } from './GlobalStateContext'
+import axios from 'axios'
 
 export const GlobalState = (props) => {
     const [ list, setList ] = useState([])
-
     const states = { list }
     const setters = { setList }
+    
 
     return (
         <GlobalStateContext.Provider value={{ states, setters }}>

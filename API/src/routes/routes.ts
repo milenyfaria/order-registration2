@@ -1,9 +1,7 @@
 import { Router } from 'express'
-import { readStockController } from '../controllers/stock-controllers'
+import { readStockController, updateStockController } from '../controllers/stock-controllers'
 
 export const router = Router()
 
 router.get('/estoque', readStockController)
-// router.post('/lista-compras', createShoppingList)
-// router.put('/lista-compras/:id', updateShoppingList)
-// router.delete('/lista-compras/:id', deleteShoppingList)
+router.post('/lista-compras', updateStockController)
