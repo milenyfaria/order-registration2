@@ -1,16 +1,16 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../assets/og-logo.png'
-import { ContainerHeader, Logo } from './style'
+import { ContainerHeader, Logo, ButtonLogout, ButtonList } from './style'
 import { goToShoppingList, logout } from '../../routes/coordinator'
 
-export const Header = () => {
+export const Header = (props) => {
     const navigate = useNavigate()
     return (
         <ContainerHeader>
             <Logo src={logo} alt="Logo" />
-            <button onClick={() => goToShoppingList(navigate)}>Minha Lista de Compras</button>
-            <button onClick={() => logout(navigate)}>Sair</button>
+            <ButtonList onClick={props.route}>{props.button}</ButtonList>
+            <ButtonLogout onClick={() => logout(navigate)}>Sair</ButtonLogout>
         </ContainerHeader>
     )
 }

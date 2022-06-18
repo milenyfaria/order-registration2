@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContainerCard, Name, Photo, Type } from './style'
+import { ContainerCard, Name, Photo, Type, ContainerPrice, Sign, Price, Stock, Button } from './style'
 
 export const CardItem = (props) => {
   const { name, price, qty_stock, photo } = props.item
@@ -9,9 +9,12 @@ export const CardItem = (props) => {
       {props.type && <Type>{props.type}</Type>}
       <Photo src={photo} />
       <Name>{name}</Name>
-      <p>{price}</p>
-      <p>{qty_stock}</p>
-      <button onClick={() => props.addItemToList(props.item)}>Adicionar</button>
+      <ContainerPrice>
+        <Sign>R$</Sign>
+        <Price>{price}</Price>
+      </ContainerPrice>
+      <Stock>Restam no estoque: {qty_stock}</Stock>
+      <Button onClick={() => props.addItemToList(props.item)}>+ Adicionar</Button>
     </ContainerCard>
   )
 }

@@ -1,9 +1,15 @@
 import styled from 'styled-components'
 
 export const ContainerLoginPage = styled.div`
-  position: absolute;
+  position: relative;
   width: 100vw;
   height: 100vh;
+`;
+
+export const Image = styled.img`
+  position: absolute;
+  width: 300px;
+  left: 38%;
 `;
 
 export const ContainerBoxLogin = styled.div`
@@ -11,7 +17,7 @@ export const ContainerBoxLogin = styled.div`
   padding: 20px;
   top: 50%;
   left: 50%;
-  width: 40%;
+  width: 500px;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0);
   box-sizing: border-box;
@@ -19,12 +25,6 @@ export const ContainerBoxLogin = styled.div`
   border-radius: 10px;
 `;
 
-export const Image = styled.img`
-  position: relative;
-  width: 16em;
-  left: 40%;
-  top: 3%;
-`;
 
 export const Title = styled.h2`
   margin: 5% 0 30px;

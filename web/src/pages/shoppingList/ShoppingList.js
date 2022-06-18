@@ -1,15 +1,14 @@
 import React, { useContext } from 'react'
 import axios from 'axios'
-import { goToStock, logout } from '../../routes/coordinator'
+import { goToStock } from '../../routes/coordinator'
 import { useNavigate } from 'react-router-dom'
 import { GlobalStateContext } from '../../global/GlobalStateContext'
 import { CardList } from '../../components/cardList/CardList'
-import { ContainerList } from './style'
-import { useRequestData } from '../../hooks/useRequestData'
+import { Container, ContainerTotal, Total, Price, ButtonSave } from './style'
+import { Header } from '../../components/header/Header';
 
 export const ShoppingList = () => {
   const navigate = useNavigate()
-  const [ stock, setStock, isLoading ] = useRequestData('/estoque', [])
   const { states, setters } = useContext(GlobalStateContext)
   const { list } = states
   const { setList } = setters
@@ -42,7 +41,7 @@ export const ShoppingList = () => {
     priceToPay += Number(item.price) * item.qty
   })
 
-  const onClick = () => {
+  const saveShoppingList = () => {
     const body = list.map((item) => {
       return {
         id: item.id,
@@ -63,13 +62,16 @@ export const ShoppingList = () => {
 
 
   return(
-    <ContainerList>
-      <h1>Lista Compras</h1>
+    <div>
+      <Header button={"Continuar comprando"} route={() => goToStock(navigate)}/>
       {renderedList}
-      <h3>Total: R${priceToPay.toFixed(2)}</h3>
-      <button onClick={onClick}>Salvar minha lista de compras</button>
-      <button onClick={() => goToStock(navigate)}>Ver Estoque</button>
-      <button onClick={() => logout(navigate)}>Sair</button>
-    </ContainerList>
+      <Container>
+        <ContainerTotal>
+          <Total>Total: R$</Total>
+          <Price>{priceToPay.toFixed(2)}</Price>
+        </ContainerTotal>
+        <ButtonSave onClick={saveShoppingList}>Salvar minha lista de compras</ButtonSave>
+      </Container>
+    </div>
   )
 }

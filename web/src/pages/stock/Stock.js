@@ -1,11 +1,14 @@
 import React, { Fragment, useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { goToShoppingList } from '../../routes/coordinator'
 import { CardItem } from '../../components/cardItem/CardItem'
-import { ContainerStock } from './style'
+import { ContainerStock, Loading } from './style'
 import { GlobalStateContext } from '../../global/GlobalStateContext'
 import { Header } from '../../components/header/Header'
 import { useRequestData } from '../../hooks/useRequestData'
 
 export const Stock = () => {
+    const navigate = useNavigate()
     const [ stock, setStock, isLoading ] = useRequestData('/estoque', [])
     const { states, setters } = useContext(GlobalStateContext)
     const { list } = states
@@ -68,9 +71,9 @@ export const Stock = () => {
        
         return(
             <div>
-                <Header />
+                <Header button={'Minha lista de compras'} route={() => goToShoppingList(navigate)}/>
                 <ContainerStock>
-                {isLoading ? <p>Carregando...</p> : productsByType}
+                {isLoading ? <Loading></Loading> : productsByType}
                 </ContainerStock>
             </div>
         )

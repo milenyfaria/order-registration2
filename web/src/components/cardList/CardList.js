@@ -1,16 +1,32 @@
 import React from 'react'
-import { ContainerCard } from './style'
+import {
+  ContainerCard,
+  Image,
+  Name,
+  ContainerPrice,
+  Sign,
+  Price,
+  Button
+} from './style'
 
 export const CardList = (props) => {
-    const { name, price, qty } = props.item
+  const { photo, name, price, qty } = props.item
 
     return (
-        <ContainerCard>
-          <p>{name}</p>
-          <p>{price}</p>
-          <p>{qty}</p>
-          <button onClick={() => props.changeItemFromList(props.item)}>Remover</button>
-        </ContainerCard>
-      )
-
+      <ContainerCard>
+        <Image src={photo} />
+        <div>
+          <Name>{name}</Name>
+          <ContainerPrice>
+            <Sign>R$ </Sign>
+            <Price>
+              {price} x {qty}
+            </Price>
+          </ContainerPrice>
+        </div>
+        <Button onClick={() => props.changeItemFromList(props.item)}>
+          Remover
+        </Button>
+      </ContainerCard>
+    )
 }
