@@ -4,6 +4,7 @@
 Este projeto é um teste técnico para o processo seletivo da Shopper.com.br, onde foi solicitado a criação de um formulário de cadastro de pedidos com estoque.
 
 <h3>Funcionalidades</h3>
+
 - [x] Página de Login: O usuário deve digitar seu email e senha cadastrados. Como não estou usando nenhuma API que retorma um token de autorização, o sistema de login é fictício, não exigindo um cadastro real, apenas sendo necessário digitar algum email e senha aleatórios.
 
 - [x] Página de Estoque: Nessa página o usuário é capaz de visualizar os itens vendidos, bem como seu valor e a quantidade existente no estoque. Também é capaz de adicionar itens à sua lista de compras. Caso algum item não tenha mais em estoque, o usuário é avisado.
@@ -13,10 +14,12 @@ Este projeto é um teste técnico para o processo seletivo da Shopper.com.br, on
 - [x] Em qualquer momento o usuário poderá deslogar clicando no botão login, onde é redirecionado para a página de login.
 
 <h3>Tecnologias utilizadas</h3>
+
     Website (React + TypeScript)
         React Router Dom
         React Icons
         Axios
+        
     Server (NodeJS + Typescript)
         Express
         CORS
@@ -24,7 +27,8 @@ Este projeto é um teste técnico para o processo seletivo da Shopper.com.br, on
         ts-node
         dotENV
 
-<h4>Link do projeto:</h4> <a href="misty-need.surge.sh">Shopper<//a>
+<h4>Link do projeto:</h4>
+<a href="misty-need.surge.sh">Shopper</a>
 Entre com qualquer email e senha
 
 <h3>Autor</h3>
