@@ -17,13 +17,13 @@ export const updateStockRepository = async (list: any) => {
              const query = connection('stock')
                  .where('id', '=', item.id)
                  .decrement('qty_stock', item.quantity)
-                 .transacting(trx) // This makes every update be in the same transaction
+                 .transacting(trx)
              queries.push(query)
          })
      
-         Promise.all(queries) // Once every query is written
-             .then(trx.commit) // We try to execute all of them
-             .catch(trx.rollback) // And rollback in case any of them goes wrong
+         Promise.all(queries)
+             .then(trx.commit)
+             .catch(trx.rollback)
      })
    } catch (error: any) {
       console.log(error)

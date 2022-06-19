@@ -6,7 +6,9 @@ import {
   ContainerPrice,
   Sign,
   Price,
-  Button
+  Button, 
+  ButtonIconAdd,
+  ButtonIconRemove
 } from './style'
 
 export const CardList = (props) => {
@@ -24,9 +26,9 @@ export const CardList = (props) => {
             </Price>
           </ContainerPrice>
         </div>
-        <Button onClick={() => props.changeItemFromList(props.item)}>
-          Remover
-        </Button>
+        <Button onClick={() => props.removeItemFromList(props.item)}>Ver Estoque</Button>
+        <ButtonIconAdd  size="22" onClick={() => props.addItemToList(props.item)} />
+        <ButtonIconRemove size="22" onClick={() => props.removeItemFromList(props.item)} />
       </ContainerCard>
     )
 }

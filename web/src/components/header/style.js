@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from "styled-components"
+import { primaryColor, secondaryColor } from '../../constants/colors'
 
 export const ContainerHeader = styled.div`
   position: relative;
@@ -22,12 +23,12 @@ export const ButtonLogout = styled.button`
   height: 30px;
   border-radius: 20px;
   font-weight: bold;
-  color: #fff;
-  border: solid 0.9px rgb(45, 167, 122);
-  background-color: rgb(45, 167, 122);
+  color: ${secondaryColor};
+  border: solid 0.9px ${primaryColor};
+  background-color: ${primaryColor};
   :hover {
-    background: #fff;
-    color: rgb(45, 167, 122);
+    background: ${secondaryColor};
+    color: ${primaryColor};
   }
 `;
 
@@ -38,11 +39,11 @@ export const ButtonList = styled.button`
   height: 30px;
   border-radius: 20px;
   font-weight: bold;
-  color: #fff;
-  border: solid 0.9px rgb(45, 167, 122);
-  background-color: rgb(45, 167, 122);
+  color: ${secondaryColor};
+  border: solid 0.9px ${primaryColor};
+  background-color: ${primaryColor};
   :hover {
-    background: #fff;
-    color: rgb(45, 167, 122);
+    background: ${secondaryColor};
+    color: ${primaryColor};
   }
 `;

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { primaryColor, secondaryColor } from '../../constants/colors'
 
 export const ContainerCard = styled.div`
   position: relative;
@@ -21,7 +22,7 @@ export const Type = styled.div`
   margin-bottom: 12px;
   text-align: center;
   font-weight: bold;
-  color: rgb(45, 167, 122);
+  color: ${primaryColor};
 `
 
 export const Photo = styled.img`
@@ -52,7 +53,7 @@ export const Sign = styled.p`
 `
 
 export const Price = styled.p`
-  color: rgb(45, 167, 122);
+  color: ${primaryColor};
   font-size: 23px;
 `
 
@@ -69,11 +70,11 @@ export const Button = styled.button`
   height: 30px;
   border-radius: 20px;
   font-weight: bold;
-  color: rgb(45, 167, 122);
-  border: solid 0.9px rgb(45, 167, 122);
-  background-color: white;
+  color: ${primaryColor};
+  border: solid 0.9px ${primaryColor};
+  background-color: ${secondaryColor};
   :hover {
-      background: rgb(45, 167, 122);
-      color: #fff;
+      background: ${primaryColor};
+      color: ${secondaryColor};
     }
 `

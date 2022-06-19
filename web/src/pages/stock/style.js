@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { primaryColor, secondaryColor } from '../../constants/colors'
 
 export const ContainerStock = styled.div`
     display: flex;
@@ -9,11 +10,11 @@ export const ContainerStock = styled.div`
 export const Loading = styled.p`
   left: 0;
   right: 0;
-  margin: 50% auto;
+  margin: 100%;
   animation: is-rotating 1s infinite;
-  border: 6px solid rgb(45, 167, 122);
+  border: 6px solid ${primaryColor};
   border-radius: 50%;
-  border-top-color: #51d4db;
+  border-top-color: ${primaryColor};
   height: 50px;
   width: 50px;
   @keyframes is-rotating {

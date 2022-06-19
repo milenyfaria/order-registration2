@@ -1,11 +1,12 @@
 import React, { Fragment, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
+import { GlobalStateContext } from '../../global/GlobalStateContext'
+import { useRequestData } from '../../hooks/useRequestData'
 import { goToShoppingList } from '../../routes/coordinator'
+import { Header } from '../../components/header/Header'
 import { CardItem } from '../../components/cardItem/CardItem'
 import { ContainerStock, Loading } from './style'
-import { GlobalStateContext } from '../../global/GlobalStateContext'
-import { Header } from '../../components/header/Header'
-import { useRequestData } from '../../hooks/useRequestData'
 
 export const Stock = () => {
     const navigate = useNavigate()
@@ -19,7 +20,7 @@ export const Stock = () => {
         const newList = [...list]
         const index = newList.findIndex((i) => i.id === newItem.id)
         if (!newItem.qty_stock || (index !== -1 && newItem.qty_stock <= newList[index].qty)) {
-            alert('Vá a mierda')
+            Swal.fire('Não há mais itens no estoque')
             return
         }
     
@@ -73,7 +74,7 @@ export const Stock = () => {
             <div>
                 <Header button={'Minha lista de compras'} route={() => goToShoppingList(navigate)}/>
                 <ContainerStock>
-                {isLoading ? <Loading></Loading> : productsByType}
+                  {isLoading ? <Loading></Loading> : productsByType}
                 </ContainerStock>
             </div>
         )

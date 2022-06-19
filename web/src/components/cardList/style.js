@@ -1,4 +1,6 @@
-import styled from "styled-components";
+import styled from "styled-components"
+import { GoChevronUp, GoChevronDown } from 'react-icons/go'
+import { primaryColor, secondaryColor } from '../../constants/colors'
 
 export const ContainerCard = styled.div`
   display: flex;
@@ -39,7 +41,7 @@ export const Sign = styled.p`
 `;
 
 export const Price = styled.p`
-  color: rgb(45, 167, 122);
+  color: ${primaryColor};
   font-size: 130%;
   position: absolute;
   right: 180px;
@@ -48,16 +50,38 @@ export const Price = styled.p`
 export const Button = styled.button`
   position: absolute;
   top: 35px;
-  right: 50px;
+  right: 25px;
   width: 100px;
   height: 30px;
   border-radius: 20px;
   font-weight: bold;
-  color: rgb(45, 167, 122);
-  border: solid 0.9px rgb(45, 167, 122);
-  background-color: white;
+  color: ${primaryColor};
+  border: solid 0.9px ${primaryColor};
+  background-color: ${secondaryColor};
   :hover {
-    background: rgb(45, 167, 122);
-    color: #fff;
+    background: ${primaryColor};
+    color: ${secondaryColor};
   }
 `;
+
+export const ButtonIconAdd = styled(GoChevronUp)`
+  position: absolute;
+  right: 140px;
+  top: 25px;
+  color: ${primaryColor};
+  :hover {
+    background: ${primaryColor};
+    color: ${secondaryColor};
+  }
+`
+
+export const ButtonIconRemove = styled(GoChevronDown)`
+  position: absolute;
+  right: 140px;
+  bottom: 25px;
+  color: ${primaryColor};
+  :hover {
+    background: ${primaryColor};
+    color: ${secondaryColor};
+  }
+`
