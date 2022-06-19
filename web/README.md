@@ -29,7 +29,7 @@ Este projeto é um teste técnico para o processo seletivo da Shopper.com.br, on
 
 <h4>Link do projeto:</h4>
 <a href="misty-need.surge.sh">Shopper</a>
-Entre com qualquer email e senha
+<p>Entre com qualquer email e senha</p>
 
 <h3>Autor</h3>
 <a href="https://www.linkedin.com/in/mileny-faria/">Linkedin</a>
