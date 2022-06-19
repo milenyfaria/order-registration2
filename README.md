@@ -36,7 +36,8 @@ Este projeto é um teste técnico para o processo seletivo da Shopper.com.br, on
 <p>Entre com qualquer email e senha</p>
 
 
-<h3>Autor</h3>
+<h3>Autora</h3>
+Mileny
 <a href="https://www.linkedin.com/in/mileny-faria/">Linkedin</a>
 <a href="https://github.com/milenyfaria">GitHub</a>
 
