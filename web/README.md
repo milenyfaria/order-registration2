@@ -1,6 +1,6 @@
 <h1 align="center">Teste Técnico - Lista de Compras Shopper</h1>
 
-💻 <h3>Sobre o Projeto</h3>
+💻<h3>Sobre o Projeto</h3>
 Este projeto é um teste técnico para o processo seletivo da Shopper.com.br, onde foi solicitado a criação de um formulário de cadastro de pedidos com estoque.
 
 ⚙️<h3>Funcionalidades</h3>
