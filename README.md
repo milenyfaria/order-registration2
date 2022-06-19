@@ -20,6 +20,7 @@ Este projeto é um teste técnico para o processo seletivo da Shopper.com.br, on
     Website (React)
         React Router Dom
         React Icons
+        Styled-Components
         Axios
 
     Server (NodeJS + TypeScript)
