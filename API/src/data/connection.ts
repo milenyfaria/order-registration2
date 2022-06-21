@@ -1,7 +1,7 @@
 import knex from 'knex'
 import dotenv from 'dotenv'
 
-dotenv.config()
+dotenv.config() // variavel de ambiente
 
 export const connection = knex({
     client: 'mysql',

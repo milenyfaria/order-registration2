@@ -1,4 +1,4 @@
-import { connection } from '../data/connection';
+import { connection } from '../data/connection'
 
 export const readStockRepository = async () => {
    try {
@@ -26,7 +26,6 @@ export const updateStockRepository = async (list: any) => {
              .catch(trx.rollback)
      })
    } catch (error: any) {
-      console.log(error)
-      return error.message;
+      return error.message
    }
-};
+}
