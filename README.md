@@ -19,10 +19,11 @@ Este projeto é um teste técnico para o processo seletivo da Shopper.com.br, on
 ## Tecnologias utilizadas
 
 ```
-Website (React + TypeScript)
+Website (React)
     React Router Dom
     React Icons
     Axios
+    Styled-components
 
 Server (NodeJS + TypeScript)
     Express
