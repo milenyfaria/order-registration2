@@ -1,10 +1,11 @@
-<h1 align="center">Teste Técnico - Lista de Compras Shopper</h1>
+# Teste Técnico - Lista de Compras Shopper
 
-<h3>Sobre o Projeto</h3>
+## Sobre o Projeto
+
 Este projeto é um teste técnico para o processo seletivo da Shopper.com.br, onde foi solicitado a criação de um formulário de cadastro de pedidos com estoque.
 
 
-<h3>Funcionalidades</h3>
+## Funcionalidades
 
 - [x] Página de Login: O usuário deve digitar seu email e senha cadastrados. Como não estou usando nenhuma API que retorma um token de autorização, o sistema de login é fictício, não exigindo um cadastro real, apenas sendo necessário digitar algum email e senha aleatórios.
 
@@ -15,27 +16,74 @@ Este projeto é um teste técnico para o processo seletivo da Shopper.com.br, on
 - [x] Em qualquer momento o usuário poderá deslogar clicando no botão login, onde é redirecionado para a página de login.
 
 
-<h3>Tecnologias utilizadas</h3>
+## Tecnologias utilizadas
 
-    Website (React + TypeScript)
-        React Router Dom
-        React Icons
-        Axios
+```
+Website (React + TypeScript)
+    React Router Dom
+    React Icons
+    Axios
 
-    Server (NodeJS + TypeScript)
-        Express
-        CORS
-        KnexJS
-        ts-node
-        dotENV
+Server (NodeJS + TypeScript)
+    Express
+    CORS
+    KnexJS
+    ts-node
+    dotENV
+```
 
+## Rodando o projeto
 
-<h4>Link do projeto</h4>
-<a href='misty-need.surge.sh'>Shopper</a>
-<p>Entre com qualquer email e senha</p>
+### Back-end
 
+Acesse a pasta `/api` e insira as informações de conexão com o banco de dados usando o modelo de arquivo `.env` abaixo:
 
-<h3>Autor</h3>
-<a href="https://www.linkedin.com/in/mileny-faria/">Linkedin</a>
-<a href="https://github.com/milenyfaria">GitHub</a>
+```
+DB_HOST= 
+DB_PORT= 
+DB_USER= 
+DB_PASSWORD= 
+DB_DATABASE= 
+```
+
+Depois instale as dependências usando:
+
+```
+npm install
+```
+
+Para rodar o projeto execute:
+
+```
+npm run dev
+```
+
+Agora seu back-end estará rodando na porta 3003.
+
+### Front-end
+
+Acesse a pasta `/web` e instale as dependências usando:
+
+```
+npm install
+```
+
+Para rodar o projeto execute:
+
+```
+npm start
+```
+
+Abra [http://localhost:3000](http://localhost:3000) no seu navegador para acessar a aplicação.
+
+## Link do projeto
+
+[Shopper](misty-need.surge.sh)
+
+Entre com qualquer email e senha
+
+## Autor
+
+[Linkedin](https://www.linkedin.com/in/mileny-faria)
+
 
