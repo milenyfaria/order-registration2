@@ -85,5 +85,3 @@ Entre com qualquer email e senha
 ## Autor
 
 [Linkedin](https://www.linkedin.com/in/mileny-faria)
-
-
