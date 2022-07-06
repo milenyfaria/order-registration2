@@ -77,11 +77,6 @@ npm start
 
 Abra [http://localhost:3000](http://localhost:3000) no seu navegador para acessar a aplicação.
 
-## Link do projeto
-
-[Shopper](misty-need.surge.sh)
-
-Entre com qualquer email e senha
 
 ## Autor
 
