@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { readStockController, updateStockController } from '../controllers/stock-controllers'
+import { readStockController, updateStockController } from '../controller/StockController'
 
 export const router = Router()
 
