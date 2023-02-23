@@ -32,6 +32,39 @@ export const Image = styled.img`
 
 `;
 
+export const Container = styled.div`
+  display: flex;
+`;
+
+export const ContainerBoxSignUp = styled.div`
+  position: absolute;
+  padding: 20px;
+  
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+
+  @media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    top: 50%;
+    left: 25%;
+    width: 40%;
+  }
+
+  @media screen and (min-device-width : 481px) and (max-device-width : 800px) {
+    top: 50%;
+    left: 25%;
+    width: 40%;
+  }
+
+  @media screen and (min-device-width : 1200px) {
+    top: 50%;
+    left: 25%;
+    width: 40%;
+  }
+`;
+
 export const ContainerBoxLogin = styled.div`
   position: absolute;
   padding: 20px;
@@ -44,19 +77,19 @@ export const ContainerBoxLogin = styled.div`
 
   @media screen and (min-device-width : 320px) and (max-device-width : 480px) {
     top: 50%;
-    left: 50%;
-    width: 60%;
+    right: -10%;
+    width: 40%;
   }
 
   @media screen and (min-device-width : 481px) and (max-device-width : 800px) {
     top: 50%;
-    left: 50%;
-    width: 60%;
+    right: -10%;
+    width: 40%;
   }
 
   @media screen and (min-device-width : 1200px) {
     top: 50%;
-    left: 50%;
+    right: -10%;
     width: 40%;
   }
 `;

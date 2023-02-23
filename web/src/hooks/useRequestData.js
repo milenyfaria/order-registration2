@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { BASE_URL } from '../constants/url'
 import axios from 'axios'
 
 export const useRequestData = (url, initialState) => {
@@ -12,9 +13,14 @@ export const useRequestData = (url, initialState) => {
 
   const getData = () => {
     setIsLoading(true)
+    const headers = {
+      headers: {
+        auth: localStorage.getItem('token')
+      }
+    }
     
     axios
-      .get(`http://localhost:3003${url}`)
+      .get(`${BASE_URL}${url}`, headers)
       .then((res) => {
         setData(res.data)
         setIsLoading(false)

@@ -9,3 +9,7 @@ export const logout = (navigate) => {
 export const goToShoppingList = (navigate) => {
     navigate('/lista-compras')
 }
+
+export const goToLoginPage = (navigate) => {
+    navigate('/login')
+}
