@@ -1,0 +1,6 @@
+-- Active: 1677088328822@@35.226.146.116@3306@gebru-4211616-mileny-faria
+CREATE TABLE IF NOT EXISTS stock_users(
+    id VARCHAR(255) PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);

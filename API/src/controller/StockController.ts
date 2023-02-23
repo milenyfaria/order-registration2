@@ -1,17 +1,17 @@
 import { Request, Response } from 'express'
-import { StockDatabase } from '../data/StockDatabase'
+import { StockBusiness } from '../business/StockBusiness'
 
 export class StockController {
 
-    private stockRepository: StockDatabase
+    private stockBusiness: StockBusiness
     constructor() {
-        this.stockRepository = new StockDatabase()
+        this.stockBusiness = new StockBusiness()
     }
 
     readStockController = async (req: Request, res: Response) => {
 
         try {
-            const stock =  await this.stockRepository()
+            const stock =  await this.stockBusiness.readStockBusiness()
             res.send(stock)
             
         } catch (error: any) {
@@ -22,7 +22,7 @@ export class StockController {
     updateStockController = async (req: Request, res: Response) => {
 
         try {
-            const stock = await this.stockRepository.updateStockRepository(req.body)
+            const stock = await this.stockBusiness
             res.send(stock)
 
         } catch (error: any) {
