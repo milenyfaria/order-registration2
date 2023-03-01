@@ -1,5 +1,6 @@
 import React, { Fragment, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useProtectedPage } from '../../hooks/useProtectedPage'
 import Swal from 'sweetalert2'
 import { GlobalStateContext } from '../../global/GlobalStateContext'
 import { useRequestData } from '../../hooks/useRequestData'
@@ -10,7 +11,8 @@ import { ContainerStock, Loading } from './style'
 
 export const Stock = () => {
     const navigate = useNavigate()
-    const [ stock, setStock, isLoading ] = useRequestData('/estoque', [])
+    useProtectedPage()
+    const [ stock, setStock, isLoading ] = useRequestData(`/estoque/estoque`, [])
     const { states, setters } = useContext(GlobalStateContext)
     const { list } = states
     const { setList } = setters

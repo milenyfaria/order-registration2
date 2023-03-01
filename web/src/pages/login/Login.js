@@ -1,11 +1,11 @@
 import React from 'react'
+import axios from 'axios'
+import { BASE_URL } from '../../constants/url'
 import { goToStock } from '../../routes/coordinator'
 import { useNavigate } from 'react-router-dom'
 import { useForms } from '../../hooks/useForms'
 import {
   ContainerLoginPage,
-  Container,
-  ContainerBoxSignUp,
   ContainerBoxLogin,
   Image,
   Title,
@@ -21,40 +21,23 @@ export const Login = () => {
 
   const onSubmitLogin = (event) => {
     event.preventDefault()
-    goToStock(navigate)
+
+    axios
+    .post('http://localhost:3003/user/login', form)
+    .then((res) => {
+      localStorage.setItem('token', res.data.token)
+      goToStock(navigate)
+    })
+    .catch((err) => {
+      alert('Failed')
+    })
+ 
     cleanFields()
   }
 
   return (
     <ContainerLoginPage>
       <Image src={foto} />
-      <Container>
-        <ContainerBoxSignUp>
-          <Title>Criar Conta</Title>
-          <form onSubmit={onSubmitLogin}>
-            <ContainerInput>
-              <Input
-                placeholder="Digite seu email"
-                name={"email"}
-                type={"email"}
-                value={form.email}
-                onChange={onChange}
-                required
-              />
-            </ContainerInput>
-            <ContainerInput>
-              <Input
-                placeholder="Digite sua senha"
-                name={"password"}
-                type={"password"}
-                value={form.password}
-                onChange={onChange}
-                required
-              />
-            </ContainerInput>
-            <ButtonLogIn>Cadastrar</ButtonLogIn>
-          </form>
-        </ContainerBoxSignUp>
         <ContainerBoxLogin>
           <Title>Login</Title>
           <form onSubmit={onSubmitLogin}>
@@ -70,7 +53,7 @@ export const Login = () => {
             </ContainerInput>
             <ContainerInput>
               <Input
-                placeholder="Digite sua senha"
+                placeholder="Digite uma senha"
                 name={"password"}
                 type={"password"}
                 value={form.password}
@@ -81,7 +64,6 @@ export const Login = () => {
             <ButtonLogIn>Entrar</ButtonLogIn>
           </form>
         </ContainerBoxLogin>
-      </Container>
     </ContainerLoginPage>
   )
 }

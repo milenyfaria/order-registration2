@@ -26,7 +26,7 @@ export const useRequestData = (url, initialState) => {
         setIsLoading(false)
       })
       .catch((err) => {
-        alert("Deu erro!")
+        alert("error!")
       })
   }
 
