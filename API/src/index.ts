@@ -3,4 +3,4 @@ import { userRouter } from './controller/UserRouter'
 import { stockRouter } from './controller/StockRouter'
 
 app.use('/user/', userRouter)
-app.use('/', stockRouter)
+app.use('/estoque/', stockRouter)

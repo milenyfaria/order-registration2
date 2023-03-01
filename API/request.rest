@@ -18,3 +18,7 @@ Content-Type: application/json
     "email": "myrfaria@gmail.com",
     "password": "pass123"
 }
+
+###
+GET http://localhost:3003/estoque/estoque
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ0Nzc2YjI4LWZkOGUtNDFmZC1hZWE2LTVhYTRmYzkzNTJjMCIsImlhdCI6MTY3NzUyMDk0MiwiZXhwIjoxNjc3NTI0NTQyfQ.Knyd92eOrHnwwOxTYE-ZvO402uqWLrdU3RXs3ZQYWq4

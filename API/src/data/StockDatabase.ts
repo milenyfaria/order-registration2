@@ -1,12 +1,15 @@
+import { product } from '../models/Stock'
 import { BaseDatabase } from './BaseDatabase'
 
 export class StockDatabase extends BaseDatabase {
+    private static table_name = 'stock'
 
-    readStockRepository = async () => {
+    readStock = async () => {
         try {
             return await StockDatabase
-            .connection('stock')
+            .connection(StockDatabase.table_name)
             .select()
+
         } catch (error: any) {
             return error.message
         }

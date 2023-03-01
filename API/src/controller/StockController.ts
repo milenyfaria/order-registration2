@@ -1,5 +1,6 @@
 import { Request, Response } from 'express'
 import { StockBusiness } from '../business/StockBusiness'
+import { StockDTO } from '../models/Stock'
 
 export class StockController {
 
@@ -8,11 +9,16 @@ export class StockController {
         this.stockBusiness = new StockBusiness()
     }
 
-    readStockController = async (req: Request, res: Response) => {
+    readStockController = async (req: Request, res: Response): Promise<void> => {
 
         try {
-            const stock =  await this.stockBusiness.readStockBusiness()
-            res.send(stock)
+            const input: StockDTO = {
+                token: req.headers.authorization!
+            }
+            
+            const stock =  await this.stockBusiness.readStockBusiness(input)
+            
+            res.status(201).send(stock)
             
         } catch (error: any) {
             res.status(404).send(error.message)

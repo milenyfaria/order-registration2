@@ -21,3 +21,9 @@ export class UserNotExist extends CustomError {
         super(400, 'User not exist')
     }
 }
+
+export class Unauthorized extends CustomError {
+    constructor() {
+        super(401, 'Unauthorized')
+    }
+}
