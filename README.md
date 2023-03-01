@@ -4,6 +4,7 @@
 
 Este projeto é um teste técnico para o processo seletivo da Shopper.com.br, onde foi solicitado a criação de um formulário de cadastro de pedidos com estoque.
 
+### EM CONSTRUÇÃO - REFATORANDO
 
 ## Funcionalidades
 
